@@ -1,6 +1,7 @@
 import { EventManager } from './EventManager';
 import { Observer } from './interfaces/eventManager';
 import { SpaceShip } from './SpaceShip';
+import { CreatorHeatSensor } from './Sensor';
 
 const eventManager = EventManager.getInstance();
 
@@ -12,3 +13,6 @@ const observerComptable: Observer = {
     }
   },
 };
+
+const testHeat = new CreatorHeatSensor("Bosch");
+console.log(testHeat.sendValue());
