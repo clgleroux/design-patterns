@@ -1,21 +1,16 @@
-import { interfaceSpaceShip } from "./interfaces/spaceship";
+import { interfaceSpaceShip } from './interfaces/spaceship';
 
 export class SpaceShip implements interfaceSpaceShip {
   name: string;
   shield: boolean;
 
-
-  constructor() {
-
-  }
+  constructor() {}
 
   activeShiled(): boolean {
-    return this.shield = true;
+    return (this.shield = true);
   }
 
   disabledShiled(): boolean {
-    return this.shield = false;
+    return (this.shield = false);
   }
-
 }
-

@@ -3,6 +3,5 @@ export interface Observer {
 }
 
 export enum resultat {
-  BAD_RESULT= "mauvais resultat",
-
+  BAD_RESULT = 'mauvais resultat',
 }

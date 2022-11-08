@@ -1,4 +1,4 @@
-import { Observer } from "./interfaces/eventManager";
+import { Observer } from './interfaces/eventManager';
 
 export class EventManager {
   private static instance: EventManager;
@@ -22,10 +22,12 @@ export class EventManager {
   }
 
   broadcast(data: any): void {
-    Object.values(this.subscribers).forEach((observables: Observer[]) => observables.forEach((observable) => observable.update(data)));
+    Object.values(this.subscribers).forEach((observables: Observer[]) =>
+      observables.forEach(observable => observable.update(data))
+    );
   }
 
   emit(event: string, data: any): void {
-    this.subscribers[event]?.forEach((observer) => observer.update(data));
+    this.subscribers[event]?.forEach(observer => observer.update(data));
   }
 }

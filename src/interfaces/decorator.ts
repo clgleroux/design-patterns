@@ -1,3 +1,3 @@
 export interface VeryLegacy {
-  veryComplex(): string
+  veryComplex(): string;
 }

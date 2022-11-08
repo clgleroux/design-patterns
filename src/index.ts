@@ -43,6 +43,8 @@ console.log(test2.veryComplex());
 
 const f = new VeryLegacyCodeFactory();
 
-console.log(f.testFactory("VeryLegacyCodeDecoratorA").veryComplex());
+console.log(f.testFactory("VeryLegacyCodeDecoratorAB").veryComplex());
+
+console.log(f.testFactory("VeryLegacyEventManager").veryComplex());
 
 // eventManager.broadcast({data: "hello"});
