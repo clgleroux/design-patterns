@@ -28,6 +28,7 @@ export class EventManager {
   }
 
   emit(event: string, data: any): void {
+    console.log(this.subscribers[event]);
     this.subscribers[event]?.forEach(observer => observer.update(data));
   }
 }

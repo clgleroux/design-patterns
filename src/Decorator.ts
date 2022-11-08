@@ -27,18 +27,14 @@ export class VeryLegacyCodeDecoratorAB extends VeryLegacyCode {
   }
 }
 
-export class VeryLegacyEventManager extends VeryLegacyCode {
-  eventManager = EventManager.getInstance();
+export class VeryLegacyEventManager extends VeryLegacyCode implements Observer {
+ 
+  update(data: any) {
+    return this.veryComplex()
+  }
 
   veryComplex(): string {
-    const observerPatron: Observer = {
-      update(data) {
-        console.log(`Je suis observer Patron`);
-      },
-    };
-    this.eventManager.on('coucou', observerPatron);
-    this.eventManager.emit('coucou', { resultat: 3 });
-    return 'coucou';
+    return super.veryComplex();
   }
 }
 

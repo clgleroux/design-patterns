@@ -45,6 +45,6 @@ const f = new VeryLegacyCodeFactory();
 
 console.log(f.testFactory("VeryLegacyCodeDecoratorAB").veryComplex());
 
-console.log(f.testFactory("VeryLegacyEventManager").veryComplex());
+eventManager.on("mauvais resultat", f.testFactory("VeryLegacyEventManager").update({test: 4}));
 
 // eventManager.broadcast({data: "hello"});
