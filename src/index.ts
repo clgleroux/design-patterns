@@ -4,30 +4,35 @@ import { SpaceShip } from './SpaceShip';
 
 const eventManager = EventManager.getInstance();
 
-const observerA: Observer = {
+const observerComptable: Observer = {
   update(data) {
-    console.log("L'evenement : ", );
+    console.log("Je suis observer Comptable");
+    if (data.resultat < 4) {
+      eventManager.emit('reduction salaire', {salaire: 2});
+    }
   }
 }
 
-const observerB: Observer = {
+const observerDev: Observer = {
   update(data) {
-    console.log("L'evenement : ", data);
+    console.log("Je suis observer Dev", data);
+    if (data.salaire < 3) {
+      eventManager.emit("demission", {});
+    }
   }
 }
 
-const observerC: Observer = {
+const observerPatron: Observer = {
   update(data) {
-    console.log(`L'evenement : et ${data}`);
+    console.log(`Je suis observer Patron`);
   }
 }
 
-eventManager.on("observerA", observerA);
-eventManager.on("observerB", observerB);
-eventManager.on("observerC", observerC);
+eventManager.on("mauvais resultat", observerComptable);
+eventManager.on("reduction salaire", observerComptable);
+eventManager.on("reduction salaire", observerDev);
+eventManager.on("demission", observerPatron);
 
-eventManager.broadcast({data: "hello"});
+eventManager.emit("mauvais resultat", {resultat: 3});
 
-
-
-console.log('hello world');
+// eventManager.broadcast({data: "hello"});

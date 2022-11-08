@@ -1,6 +1,5 @@
 import { Observer } from "./interfaces/eventManager";
 
-
 export class EventManager {
   private static instance: EventManager;
   private subscribers: Record<string, Observer[]>;
@@ -18,11 +17,12 @@ export class EventManager {
   }
 
   on(event: string, Observer: Observer): void {
+    if (!this.subscribers[event]) this.subscribers[event] = [];
     this.subscribers[event].push(Observer);
   }
 
   broadcast(data: any): void {
-    Object.values((key: string, observables: Observer[]) => observables.forEach((observable) => observable.update(data)));
+    Object.values(this.subscribers).forEach((observables: Observer[]) => observables.forEach((observable) => observable.update(data)));
   }
 
   emit(event: string, data: any): void {
