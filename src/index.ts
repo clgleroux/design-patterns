@@ -1,6 +1,7 @@
 import { EventManager } from './EventManager';
 import { Observer } from './interfaces/eventManager';
 import { SpaceShip } from './SpaceShip';
+import { VeryLegacyCodeFactory, VeryLegacyCodeDecoratorA, VeryLegacyCodeDecoratorB } from "./Decorator";
 
 const eventManager = EventManager.getInstance();
 
@@ -28,11 +29,20 @@ const observerPatron: Observer = {
   }
 }
 
-eventManager.on("mauvais resultat", observerComptable);
-eventManager.on("reduction salaire", observerComptable);
-eventManager.on("reduction salaire", observerDev);
-eventManager.on("demission", observerPatron);
+// eventManager.on("mauvais resultat", observerComptable);
+// eventManager.on("reduction salaire", observerComptable);
+// eventManager.on("reduction salaire", observerDev);
+// eventManager.on("demission", observerPatron);
 
-eventManager.emit("mauvais resultat", {resultat: 3});
+// eventManager.emit("mauvais resultat", {resultat: 3});
+const test = new VeryLegacyCodeDecoratorA()
+console.log(test.veryComplex());
+
+const test2 = new VeryLegacyCodeDecoratorB()
+console.log(test2.veryComplex());
+
+const f = new VeryLegacyCodeFactory();
+
+console.log(f.testFactory("VeryLegacyCodeDecoratorA").veryComplex());
 
 // eventManager.broadcast({data: "hello"});
