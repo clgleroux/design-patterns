@@ -5,33 +5,50 @@ import { CreatorHeatSensor } from './Sensor';
 import { Cockpit } from './Cockpit';
 import { CommandActiveShield } from './command/command';
 import { Shield } from './Shield';
+import { Message } from './Message';
+import { AdapterMessage } from './adapter/adapter';
 
 const eventManager = EventManager.getInstance();
+
+const cockpit = new Cockpit();
 
 const observerHeatSensor: Observer = {
   update(data) {
     if (data.data.value > 35) {
-      return eventManager.emit('cockpit', { danger: true });
+      return eventManager.emit('cockpit', {
+        info: { type: 'Heat', title: 'WARNING', object: 'Call 911' },
+      });
     }
-    return eventManager.emit('cockpit', { danger: false });
+    return eventManager.emit('cockpit', {
+      info: { type: 'Heat', title: 'COOL', object: "It's ok !" },
+    });
   },
 };
 
 const observerRadarSensor: Observer = {
   update(data) {
     if (data.data.value < 100) {
-      return eventManager.emit('cockpit', { danger: true });
+      return eventManager.emit('cockpit', {
+        info: { type: 'Radar FR', title: 'DANGER', object: 'Appelle le 18' },
+      });
     }
-    return eventManager.emit('cockpit', { danger: false });
+    return eventManager.emit('cockpit', {
+      info: { type: 'Radar FR', title: 'OK', object: 'Tout va bien !' },
+    });
   },
 };
 
 const observerCockpit: Observer = {
   update(data) {
-    if (data.danger) {
-      return console.log('CALL 911');
+    if (data.info.type.includes('FR')) {
+      cockpit.displayMessage(
+        new AdapterMessage(data.info.title, data.info.object).sendMessage()
+      );
+    } else {
+      cockpit.displayMessage(
+        new Message(data.info.title, data.info.object).sendMessage()
+      );
     }
-    return console.log("IT'S OK");
   },
 };
 
@@ -39,20 +56,12 @@ eventManager.on('heatSensor', observerHeatSensor);
 eventManager.on('radarSensor', observerRadarSensor);
 eventManager.on('cockpit', observerCockpit);
 
-const testHeat = new CreatorHeatSensor('Bosch');
+const heatSensor = new CreatorHeatSensor('Bosch');
+const radarSensor = new CreatorHeatSensor('Bosch');
 
-eventManager.emit('heatSensor', testHeat.sendValue());
+eventManager.emit('heatSensor', heatSensor.sendValue());
+eventManager.emit('radarSensor', radarSensor.sendValue());
 
-// eventManager.on("mauvais resultat", observerComptable);
-// eventManager.on("reduction salaire", observerComptable);
-// eventManager.on("reduction salaire", observerDev);
-// eventManager.on("demission", observerPatron);
-
-// eventManager.emit("mauvais resultat", {resultat: 3});
-
-
-
-let cockpit = new Cockpit();
 let shield = new Shield();
 cockpit.setChangeShield(new CommandActiveShield(shield, true));
 console.log(shield.active);

@@ -5,11 +5,11 @@ abstract class CreatorSensor {
   constructor(brand: string) {
     this.brand = brand;
   }
-  
+
   public abstract factoryMethod(): sensor;
 
   public sendValue(): any {
-    const sensor = this.factoryMethod()
+    const sensor = this.factoryMethod();
     return sensor.getValue();
   }
 }
@@ -36,6 +36,6 @@ class HeatSensor implements sensor {
 class RadarSensor implements sensor {
   public getValue(): any {
     // Return data of radar sensor
-    return { data: { value: 1000 } };
+    return { data: { value: 50 } };
   }
 }
