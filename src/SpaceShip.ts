@@ -27,6 +27,11 @@ export class SpaceShip implements interfaceSpaceShip {
     this.missiles = missiles;
     this.heatSensor = heatSensor;
     this.radarSensor = radarSensor;
+    console.log();
+    console.log('--------------------------------------');
+    console.log(`| 🚀 Welcome to ${this.name} 🚀 |`);
+    console.log('--------------------------------------');
+    console.log();
   }
 
   public displayMessage(message: message) {
@@ -34,5 +39,6 @@ export class SpaceShip implements interfaceSpaceShip {
     console.log(`|${message.subject}|`);
     console.log(`|${message.object}|`);
     console.log('--------------');
+    console.log('');
   }
 }

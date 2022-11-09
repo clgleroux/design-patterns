@@ -12,6 +12,7 @@ export class CommandActiveShield implements command {
   }
 
   execute(): void {
+    console.log('🧑‍🚀 Le cockpit change le bouclier');
     this.shield.activeShield(this.active);
   }
 }
@@ -26,6 +27,7 @@ export class CommandLaunchMissiles implements command {
   }
 
   execute(): void {
+    console.log('🧑‍🚀 Le cockpit change les missiles');
     this.missiles.launchMissiles(this.pull);
   }
 }

@@ -29,10 +29,12 @@ let magicCarpets = new SpaceShip(
 const observerHeatSensor: Observer = {
   update(data) {
     if (data.data.value > 35) {
+      magicCarpets.missiles.launchMissiles(true);
       return eventManager.emit('cockpit', {
         info: { type: 'Heat', title: 'WARNING', object: 'Call 911' },
       });
     }
+    magicCarpets.missiles.launchMissiles(false);
     return eventManager.emit('cockpit', {
       info: { type: 'Heat', title: 'COOL', object: "It's ok !" },
     });
@@ -42,10 +44,12 @@ const observerHeatSensor: Observer = {
 const observerRadarSensor: Observer = {
   update(data) {
     if (data.data.value < 100) {
+      magicCarpets.shield.activeShield(true);
       return eventManager.emit('cockpit', {
         info: { type: 'Radar FR', titre: 'DANGER', objet: 'Appelle le 18' },
       });
     }
+    magicCarpets.shield.activeShield(false);
     return eventManager.emit('cockpit', {
       info: { type: 'Radar FR', titre: 'OK', objet: 'Tout va bien !' },
     });
@@ -76,9 +80,9 @@ eventManager.emit('heatSensor', magicCarpets.heatSensor.sendValue());
 eventManager.emit('radarSensor', magicCarpets.radarSensor.sendValue());
 
 magicCarpets.cockpit.setChangeShield(new CommandActiveShield(shield, true));
-console.log(shield.active);
+// console.log(shield.active);
 
 magicCarpets.cockpit.setLaunchMissile(
   new CommandLaunchMissiles(missiles, true)
 );
-console.log(missiles.pull);
+// console.log(missiles.pull);
