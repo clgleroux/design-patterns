@@ -5,7 +5,7 @@ import { CreatorHeatSensor } from './Sensor';
 import { Cockpit } from './Cockpit';
 import { CommandActiveShield } from './command/command';
 import { Shield } from './Shield';
-import { Message } from './Message';
+import { Message, MessageFR } from './Message';
 import { AdapterMessage } from './adapter/adapter';
 
 const eventManager = EventManager.getInstance();
@@ -29,11 +29,11 @@ const observerRadarSensor: Observer = {
   update(data) {
     if (data.data.value < 100) {
       return eventManager.emit('cockpit', {
-        info: { type: 'Radar FR', title: 'DANGER', object: 'Appelle le 18' },
+        info: { type: 'Radar FR', titre: 'DANGER', objet: 'Appelle le 18' },
       });
     }
     return eventManager.emit('cockpit', {
-      info: { type: 'Radar FR', title: 'OK', object: 'Tout va bien !' },
+      info: { type: 'Radar FR', titre: 'OK', objet: 'Tout va bien !' },
     });
   },
 };
@@ -42,7 +42,9 @@ const observerCockpit: Observer = {
   update(data) {
     if (data.info.type.includes('FR')) {
       cockpit.displayMessage(
-        new AdapterMessage(data.info.title, data.info.object).sendMessage()
+        new AdapterMessage(
+          new MessageFR(data.info.titre, data.info.objet)
+        ).sendMessage()
       );
     } else {
       cockpit.displayMessage(

@@ -1,16 +1,16 @@
-import { message } from '../interfaces/message';
+import { messageFR, message } from '../interfaces/message';
 import { Message } from '../Message';
 
 export class AdapterMessage extends Message {
-  public subject: string;
-  public object: string;
+  private messageFR: messageFR;
 
-  constructor(subject: string, object: string) {
-    super(subject, object);
+  constructor(messageFR: messageFR) {
+    super(messageFR.titre, messageFR.objet);
+    this.messageFR = messageFR;
   }
 
   sendMessage(): message {
-    switch (this.subject) {
+    switch (this.messageFR.titre) {
       case 'DANGER':
         this.subject = 'WARNING';
         this.object = 'Call 911';
