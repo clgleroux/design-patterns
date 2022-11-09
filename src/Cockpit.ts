@@ -1,5 +1,11 @@
-import { cockpit } from "./interfaces/cockpit";
+import { cockpit } from './interfaces/cockpit';
+import { command } from './interfaces/command';
 
-class Cockpit implements cockpit {
+export class Cockpit implements cockpit {
+  private changeShield: command;
 
+  public setChangeShield(Command: command): void {
+    this.changeShield = Command;
+    this.changeShield.execute();
+  }
 }

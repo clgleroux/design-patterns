@@ -29,13 +29,13 @@ class CreatorRadarSensor extends CreatorSensor {
 class HeatSensor implements sensor {
   public getValue(): any {
     // Return data of heat sensor
-    return { data: { value: '38°C' } };
+    return { data: { value: 38 } };
   }
 }
 
 class RadarSensor implements sensor {
   public getValue(): any {
     // Return data of radar sensor
-    return { data: { value: '1000m' } };
+    return { data: { value: 1000 } };
   }
 }

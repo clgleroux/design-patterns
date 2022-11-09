@@ -1,8 +1,10 @@
+import { cockpit } from './interfaces/cockpit';
 import { interfaceSpaceShip } from './interfaces/spaceship';
 
 export class SpaceShip implements interfaceSpaceShip {
   name: string;
   shield: boolean;
+  cockpit: cockpit
 
   constructor() {}
 
