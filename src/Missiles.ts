@@ -1,4 +1,3 @@
-import { cockpit } from './interfaces/cockpit';
 import { missiles } from './interfaces/missiles';
 
 export class Missiles implements missiles {

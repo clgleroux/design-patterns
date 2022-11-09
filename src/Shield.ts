@@ -1,4 +1,3 @@
-import { cockpit } from './interfaces/cockpit';
 import { shield } from './interfaces/shield';
 
 export class Shield implements shield {

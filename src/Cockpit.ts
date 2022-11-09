@@ -1,6 +1,5 @@
 import { cockpit } from './interfaces/cockpit';
 import { command } from './interfaces/command';
-import { message } from './interfaces/message';
 
 export class Cockpit implements cockpit {
   private changeShield: command;
