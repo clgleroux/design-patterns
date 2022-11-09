@@ -1,6 +1,6 @@
-import { sensor } from './interfaces/sensor';
+import { createSensor, sensor } from './interfaces/sensor';
 
-abstract class CreatorSensor {
+abstract class CreatorSensor implements createSensor {
   public brand: string;
   constructor(brand: string) {
     this.brand = brand;
@@ -20,7 +20,7 @@ export class CreatorHeatSensor extends CreatorSensor {
   }
 }
 
-class CreatorRadarSensor extends CreatorSensor {
+export class CreatorRadarSensor extends CreatorSensor {
   public factoryMethod(): sensor {
     return new RadarSensor();
   }
@@ -36,6 +36,6 @@ class HeatSensor implements sensor {
 class RadarSensor implements sensor {
   public getValue(): any {
     // Return data of radar sensor
-    return { data: { value: 50 } };
+    return { data: { value: 150 } };
   }
 }

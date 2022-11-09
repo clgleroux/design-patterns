@@ -1,16 +1,30 @@
 import { EventManager } from './EventManager';
 import { Observer } from './interfaces/eventManager';
 import { SpaceShip } from './SpaceShip';
-import { CreatorHeatSensor } from './Sensor';
+import { CreatorHeatSensor, CreatorRadarSensor } from './Sensor';
 import { Cockpit } from './Cockpit';
-import { CommandActiveShield } from './command/command';
+import { CommandActiveShield, CommandLaunchMissiles } from './command/command';
 import { Shield } from './Shield';
 import { Message, MessageFR } from './Message';
 import { AdapterMessage } from './adapter/adapter';
+import { Missiles } from './Missiles';
 
 const eventManager = EventManager.getInstance();
 
 const cockpit = new Cockpit();
+const heatSensor = new CreatorHeatSensor('Bosch');
+const radarSensor = new CreatorRadarSensor('Bosch');
+let shield = new Shield();
+let missiles = new Missiles();
+
+let magicCarpets = new SpaceShip(
+  'The Magic Carpets',
+  cockpit,
+  shield,
+  missiles,
+  heatSensor,
+  radarSensor
+);
 
 const observerHeatSensor: Observer = {
   update(data) {
@@ -41,13 +55,13 @@ const observerRadarSensor: Observer = {
 const observerCockpit: Observer = {
   update(data) {
     if (data.info.type.includes('FR')) {
-      cockpit.displayMessage(
+      magicCarpets.displayMessage(
         new AdapterMessage(
           new MessageFR(data.info.titre, data.info.objet)
         ).sendMessage()
       );
     } else {
-      cockpit.displayMessage(
+      magicCarpets.displayMessage(
         new Message(data.info.title, data.info.object).sendMessage()
       );
     }
@@ -58,12 +72,13 @@ eventManager.on('heatSensor', observerHeatSensor);
 eventManager.on('radarSensor', observerRadarSensor);
 eventManager.on('cockpit', observerCockpit);
 
-const heatSensor = new CreatorHeatSensor('Bosch');
-const radarSensor = new CreatorHeatSensor('Bosch');
+eventManager.emit('heatSensor', magicCarpets.heatSensor.sendValue());
+eventManager.emit('radarSensor', magicCarpets.radarSensor.sendValue());
 
-eventManager.emit('heatSensor', heatSensor.sendValue());
-eventManager.emit('radarSensor', radarSensor.sendValue());
-
-let shield = new Shield();
-cockpit.setChangeShield(new CommandActiveShield(shield, true));
+magicCarpets.cockpit.setChangeShield(new CommandActiveShield(shield, true));
 console.log(shield.active);
+
+magicCarpets.cockpit.setLaunchMissile(
+  new CommandLaunchMissiles(missiles, true)
+);
+console.log(missiles.pull);
