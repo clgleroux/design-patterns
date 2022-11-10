@@ -1,12 +1,12 @@
 # The Magic Carptes (Design Patterns)
 
-Create a Spaceship with 5 design patterns in Typescript [guideline](https://design-patterns-project.vercel.app/)
+Create a Spaceship with 5 design patterns in Typescript <a href="https://design-patterns-project.vercel.app/" target="_blank">guideline</a>
 
-- 1. [Observer](https://refactoring.guru/design-patterns/observer)
-- 2. [Singleton](https://refactoring.guru/design-patterns/singleton)
-- 3. [Adapter](https://refactoring.guru/design-patterns/adapter)
-- 4. [Command](https://refactoring.guru/design-patterns/command)
-- 5. [Factory](https://refactoring.guru/design-patterns/factory-method)
+- 1. <a href="https://refactoring.guru/design-patterns/observer" target="_blank">Observer</a>
+- 2. <a href="https://refactoring.guru/design-patterns/singleton" target="_blank">Singleton</a>
+- 3. <a href="https://refactoring.guru/design-patterns/adapter" target="_blank">Adapter</a>
+- 4. <a href="https://refactoring.guru/design-patterns/command" target="_blank">Command</a>
+- 5. <a href="https://refactoring.guru/design-patterns/factory-method" target="_blank">Factory</a>
 
 ## Installation
 
@@ -24,13 +24,13 @@ Start
 npm run start
 ```
 
-Dev (with [nodemon](https://www.npmjs.com/package/nodemon))
+Dev (with <a href="https://www.npmjs.com/package/nodemon" target="_blank">nodemon</a>)
 
 ```bash
 npm run dev
 ```
 
-Test (with [jest](https://www.npmjs.com/package/jest))
+Test (with <a href="https://www.npmjs.com/package/jest" target="_blank">jest</a>)
 
 ```bash
 npm run test
@@ -38,6 +38,6 @@ npm run test
 
 ## More information
 
-View UML (thanks to [tsuml](https://tsuml-demo.firebaseapp.com/))
+View UML (thanks to <a href="https://tsuml-demo.firebaseapp.com/" target="_blank">tsuml</a>)
 
 ![Diagram UML](./src/assets/UML_design_patterns.png 'Diagram UML Design Patterns')
