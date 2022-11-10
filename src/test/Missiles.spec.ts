@@ -1,7 +1,7 @@
 import { describe, expect } from '@jest/globals';
 import { Missiles } from '../class/Missiles';
 
-describe('Message', () => {
+describe('Missiles', () => {
   let instance: Missiles;
 
   beforeEach(() => {

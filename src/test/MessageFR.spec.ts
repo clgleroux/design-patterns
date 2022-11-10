@@ -3,7 +3,7 @@ import { MessageFR } from '../class/MessageFR';
 import { Message } from '../class/Message';
 import { AdapterMessage } from '../adapter/adapter';
 
-describe('Message', () => {
+describe('MessageFR', () => {
   let instance: MessageFR;
   let instanceAdapter: Message;
   const titre = 'mockSubject';

@@ -1,7 +1,7 @@
 import { describe, expect } from '@jest/globals';
 import { Shield } from '../class/Shield';
 
-describe('Message', () => {
+describe('Shiled', () => {
   let instance: Shield;
 
   beforeEach(() => {
