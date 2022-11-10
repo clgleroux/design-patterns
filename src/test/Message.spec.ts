@@ -1,5 +1,5 @@
-import { describe, expect, test } from '@jest/globals';
-import { Message } from './Message';
+import { describe, expect } from '@jest/globals';
+import { Message } from '../Message';
 
 describe('Message', () => {
   let instance: Message;

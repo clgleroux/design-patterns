@@ -5,9 +5,10 @@ import { CreatorHeatSensor, CreatorRadarSensor } from './Sensor';
 import { Cockpit } from './Cockpit';
 import { CommandActiveShield, CommandLaunchMissiles } from './command/command';
 import { Shield } from './Shield';
-import { Message, MessageFR } from './Message';
+import { Message } from './Message';
 import { AdapterMessage } from './adapter/adapter';
 import { Missiles } from './Missiles';
+import { MessageFR } from './MessageFR';
 
 const eventManager = EventManager.getInstance();
 

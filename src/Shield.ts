@@ -6,5 +6,6 @@ export class Shield implements shield {
   activeShield(active: boolean) {
     this.active = active;
     console.log(`🛡️ Le bouclier est ${this.active}`);
+    return this.active;
   }
 }
