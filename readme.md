@@ -35,3 +35,9 @@ Test (with jest)
 ```bash
 npm run test
 ```
+
+## More information
+
+View UML (thanks to [tsuml](https://tsuml-demo.firebaseapp.com/))
+
+![Diagram UML](./UML_design_patterns.png 'Diagram UML Design Patterns')
