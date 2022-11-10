@@ -1,10 +1,10 @@
 import {
   cockpit,
-  missiles,
   createSensor,
-  shield,
   interfaceSpaceShip,
   message,
+  missiles,
+  shield,
 } from '../interfaces';
 
 export class SpaceShip implements interfaceSpaceShip {

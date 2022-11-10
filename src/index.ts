@@ -1,14 +1,14 @@
-import { EventManager } from './class/EventManager';
-import { Observer } from './interfaces/eventManager';
-import { SpaceShip } from './class/SpaceShip';
-import { CreatorHeatSensor, CreatorRadarSensor } from './class/Sensor';
-import { Cockpit } from './class/Cockpit';
-import { CommandActiveShield, CommandLaunchMissiles } from './command/command';
-import { Shield } from './class/Shield';
-import { Message } from './class/Message';
 import { AdapterMessage } from './adapter/adapter';
-import { Missiles } from './class/Missiles';
+import { Cockpit } from './class/Cockpit';
+import { EventManager } from './class/EventManager';
+import { Message } from './class/Message';
 import { MessageFR } from './class/MessageFR';
+import { Missiles } from './class/Missiles';
+import { CreatorHeatSensor, CreatorRadarSensor } from './class/Sensor';
+import { Shield } from './class/Shield';
+import { SpaceShip } from './class/SpaceShip';
+import { CommandActiveShield, CommandLaunchMissiles } from './command/command';
+import { Observer } from './interfaces/eventManager';
 
 const eventManager = EventManager.getInstance();
 

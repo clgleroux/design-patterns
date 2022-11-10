@@ -1,5 +1,5 @@
-import { message, messageFR } from '../interfaces';
 import { Message } from '../class/Message';
+import { message, messageFR } from '../interfaces';
 
 export class AdapterMessage extends Message {
   private messageFR: messageFR;

@@ -1,8 +1,8 @@
 import { cockpit } from './cockpit';
+import { message } from './message';
 import { missiles } from './missiles';
 import { createSensor } from './sensor';
 import { shield } from './shield';
-import { message } from './message';
 
 export interface interfaceSpaceShip {
   name: string;
