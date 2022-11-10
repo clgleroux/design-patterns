@@ -24,13 +24,13 @@ Start
 npm run start
 ```
 
-Dev (with nodemon)
+Dev (with [nodemon](https://www.npmjs.com/package/nodemon))
 
 ```bash
 npm run dev
 ```
 
-Test (with jest)
+Test (with [jest](https://www.npmjs.com/package/jest))
 
 ```bash
 npm run test
