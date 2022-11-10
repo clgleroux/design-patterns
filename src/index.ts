@@ -80,10 +80,10 @@ eventManager.on('cockpit', observerCockpit);
 eventManager.emit('heatSensor', magicCarpets.heatSensor.sendValue());
 eventManager.emit('radarSensor', magicCarpets.radarSensor.sendValue());
 
-magicCarpets.cockpit.setChangeShield(new CommandActiveShield(shield, true));
-// console.log(shield.active);
+magicCarpets.cockpit.setChangeShield(
+  new CommandActiveShield(magicCarpets.shield, true)
+);
 
 magicCarpets.cockpit.setLaunchMissile(
-  new CommandLaunchMissiles(missiles, true)
+  new CommandLaunchMissiles(magicCarpets.missiles, false)
 );
-// console.log(missiles.pull);
