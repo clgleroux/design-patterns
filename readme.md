@@ -2,6 +2,12 @@
 
 Create a Spaceship with 5 design patterns in Typescript [guideline](https://design-patterns-project.vercel.app/)
 
+- 1. [Observer](https://refactoring.guru/design-patterns/observer)
+- 2. [Singleton](https://refactoring.guru/design-patterns/singleton)
+- 3. [Adapter](https://refactoring.guru/design-patterns/adapter)
+- 4. [Command](https://refactoring.guru/design-patterns/command)
+- 5. [Factory](https://refactoring.guru/design-patterns/factory-method)
+
 ## Installation
 
 Use node v.14
