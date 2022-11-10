@@ -1,9 +1,11 @@
-import { cockpit } from './interfaces/cockpit';
-import { missiles } from './interfaces/missiles';
-import { createSensor } from './interfaces/sensor';
-import { shield } from './interfaces/shield';
-import { interfaceSpaceShip } from './interfaces/spaceship';
-import { message } from './interfaces/message';
+import {
+  cockpit,
+  missiles,
+  createSensor,
+  shield,
+  interfaceSpaceShip,
+  message,
+} from './interfaces';
 
 export class SpaceShip implements interfaceSpaceShip {
   name: string;

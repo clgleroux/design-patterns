@@ -1,4 +1,4 @@
-import { Observer } from './interfaces/eventManager';
+import { Observer } from './interfaces';
 
 export class EventManager {
   private static instance: EventManager;

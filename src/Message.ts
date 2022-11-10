@@ -1,4 +1,4 @@
-import { message } from './interfaces/message';
+import { message } from './interfaces';
 
 export class Message implements message {
   subject: string;

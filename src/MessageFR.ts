@@ -1,4 +1,4 @@
-import { messageFR } from './interfaces/messageFR';
+import { messageFR } from './interfaces';
 
 export class MessageFR implements messageFR {
   titre: string;
