@@ -1,4 +1,4 @@
-import { createSensor, sensor } from './interfaces';
+import { createSensor, sensor } from '../interfaces';
 
 abstract class CreatorSensor implements createSensor {
   public brand: string;

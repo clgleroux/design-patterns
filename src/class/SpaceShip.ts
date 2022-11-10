@@ -5,7 +5,7 @@ import {
   shield,
   interfaceSpaceShip,
   message,
-} from './interfaces';
+} from '../interfaces';
 
 export class SpaceShip implements interfaceSpaceShip {
   name: string;

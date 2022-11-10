@@ -1,6 +1,6 @@
 import { describe, expect } from '@jest/globals';
-import { MessageFR } from '../MessageFR';
-import { Message } from '../Message';
+import { MessageFR } from '../class/MessageFR';
+import { Message } from '../class/Message';
 import { AdapterMessage } from '../adapter/adapter';
 
 describe('Message', () => {

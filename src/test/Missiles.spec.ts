@@ -1,5 +1,5 @@
 import { describe, expect } from '@jest/globals';
-import { Missiles } from '../Missiles';
+import { Missiles } from '../class/Missiles';
 
 describe('Message', () => {
   let instance: Missiles;

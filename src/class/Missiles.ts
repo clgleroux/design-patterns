@@ -1,4 +1,4 @@
-import { missiles } from './interfaces';
+import { missiles } from '../interfaces';
 
 export class Missiles implements missiles {
   pull: boolean;

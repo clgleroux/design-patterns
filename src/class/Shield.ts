@@ -1,4 +1,4 @@
-import { shield } from './interfaces';
+import { shield } from '../interfaces';
 
 export class Shield implements shield {
   active: boolean;

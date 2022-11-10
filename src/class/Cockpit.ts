@@ -1,4 +1,4 @@
-import { cockpit, command } from './interfaces';
+import { cockpit, command } from '../interfaces';
 
 export class Cockpit implements cockpit {
   private changeShield: command;
