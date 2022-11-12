@@ -1,8 +1,8 @@
 export interface sensor {
-  getValue(): any;
+  getValue(): { data: { value: number } };
 }
 
 export interface createSensor {
   brand: string;
-  sendValue(): any;
+  sendValue(): { data: { value: number } };
 }

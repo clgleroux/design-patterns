@@ -9,7 +9,7 @@ export class MessageFR implements messageFR {
     this.objet = objet;
   }
 
-  envoyerChristineCompta() {
+  envoyerChristineCompta(): void {
     console.log('Coucou Christine');
   }
 }

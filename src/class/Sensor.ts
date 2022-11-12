@@ -8,7 +8,7 @@ abstract class CreatorSensor implements createSensor {
 
   public abstract factoryMethod(): sensor;
 
-  public sendValue(): any {
+  public sendValue(): { data: { value: number } } {
     const sensor = this.factoryMethod();
     return sensor.getValue();
   }
@@ -27,14 +27,14 @@ export class CreatorRadarSensor extends CreatorSensor {
 }
 
 class HeatSensor implements sensor {
-  public getValue(): any {
+  public getValue(): { data: { value: number } } {
     // Return data of heat sensor
     return { data: { value: 38 } };
   }
 }
 
 class RadarSensor implements sensor {
-  public getValue(): any {
+  public getValue(): { data: { value: number } } {
     // Return data of radar sensor
     return { data: { value: 150 } };
   }

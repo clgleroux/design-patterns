@@ -36,7 +36,7 @@ export class SpaceShip implements interfaceSpaceShip {
     console.log();
   }
 
-  public displayMessage(message: message) {
+  public displayMessage(message: message): void {
     console.log('--------------');
     console.log(`|${message.subject}|`);
     console.log(`|${message.object}|`);
